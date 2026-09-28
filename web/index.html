@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Web - E-commerce</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+<header>
+    <h1>Loja Web</h1>
+    <span>Arquitetura de Sistemas Distribuidos - Projeto Pratico 1</span>
+</header>
+
+<main>
+    <section id="catalogo">
+        <h2>1. Catalogo de produtos</h2>
+        <div id="lista-produtos" class="grade"></div>
+    </section>
+
+    <aside id="carrinho">
+        <h2>2. Carrinho</h2>
+        <ul id="itens-carrinho"></ul>
+        <p class="total">Total: <strong id="total-carrinho">R$ 0,00</strong></p>
+    </aside>
+
+    <section id="checkout">
+        <h2>3. Dados para a compra</h2>
+        <form id="form-compra">
+            <fieldset>
+                <legend>Cliente</legend>
+                <label>Nome <input name="nome" required></label>
+                <label>E-mail <input name="email" type="email" required></label>
+                <label>CPF <input name="cpf" required placeholder="000.000.000-00"></label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereco de entrega</legend>
+                <label>CEP <input name="cep" id="cep" required placeholder="85902-490"></label>
+                <small id="cep-status"></small>
+                <label>Rua <input name="logradouro" id="logradouro" required></label>
+                <label>Numero <input name="numero" required></label>
+                <label>Complemento <input name="complemento"></label>
+                <label>Bairro <input name="bairro" id="bairro" required></label>
+                <label>Cidade <input name="cidade" id="cidade" required></label>
+                <label>UF <input name="uf" id="uf" maxlength="2" required></label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Pagamento (cartao de credito)</legend>
+                <label>Numero do cartao <input name="numeroCartao" required placeholder="4111 1111 1111 1111"></label>
+                <label>Nome no cartao <input name="titular" required></label>
+                <label>Validade <input name="validade" required placeholder="MM/AA"></label>
+                <label>CVV <input name="cvv" required maxlength="4"></label>
+            </fieldset>
+
+            <button type="submit" id="btn-comprar">5. Confirmar compra</button>
+        </form>
+    </section>
+
+    <section id="resultado" class="oculto">
+        <h2>Andamento do pedido</h2>
+        <p id="mensagem-resultado"></p>
+        <ol id="etapas"></ol>
+    </section>
+
+    <section id="emails">
+        <h2>Caixa de e-mails (simulada)</h2>
+        <button type="button" id="btn-emails">Atualizar</button>
+        <div id="lista-emails"></div>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
